@@ -1,0 +1,1186 @@
+body {
+    font-family: 'MS PMincho', sans-serif;
+  }
+  
+  h1,h2,h3,h4,h5,h6,p,a,li {
+      line-height: 1.8;
+    }
+
+:root {
+    --gray-color: rgb(146, 145, 143);
+  }
+
+
+// mixin定義
+@mixin testFunction($color) {
+  font-size: 14px;
+  font-weight: 400;
+  background-color: $color;
+}
+
+@mixin flexBox($content: space-around, $items: center) {
+  display: flex;
+  justify-content: $content;
+  align-items: $items;  
+}
+
+// mediaクエリ
+// min-width
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 780px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 399px)',
+  'md': 'screen and (max-width: 779px)',
+  'lg': 'screen and (max-width: 999px)',
+  'xl': 'screen and (max-width: 1199px)',
+) !default;
+
+// @mixinの定義
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+//mixin呼び出し
+.test {
+  font-size: 15px;
+  @include flexBox();
+  @include mq-down(sm){
+    font-size: 12px;
+  }
+}
+
+
+
+//====================page-wrapper====================
+.page-wrapper {
+  width: 1900px;
+  height: auto;
+  position: relative;
+
+  @include mq-down(md){
+    width: 768px;
+  }
+  @include mq-down(sm){
+    width: 375px;
+  }
+}
+
+//====================contact-link====================
+
+.header-contact {
+  position: absolute;
+  top: 90px;
+  right: 30px;
+  background-color: #EAD119;
+  height: 50px;
+  width: 50px;
+  z-index: 3;
+  text-align: center;
+  position: fixed;
+  padding-top: 3px;
+  @include mq-down(sm){
+    top: 70px;
+    right: 0px;
+    left: 320px;
+    padding-top: 2px;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    width: 50px;
+    line-height: 50px;
+    .awesomeicon {
+      color: #fff;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.header-link {
+  position: absolute;
+  top: 230px;
+  right: -20px;
+  z-index: 3;
+  position: fixed;
+  transform: rotate(90deg);
+  @include mq-down(sm){
+    top: 830px;
+    right: 0px;
+    left: -355px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+  }
+}
+
+
+//====================section-top====================
+.top {
+  width: 100%;
+  height: 1000px;
+  @include mq-down(md){
+    height: 800px;
+  }
+  @include mq-down(sm){
+    height: 550px;
+    background-position: -300px;
+  }
+
+  &-image {
+    width: 100%;
+    height: 1000px;
+    background-image: url("https://umi.design/wp-content/themes/hakushi/assets/img/home/main/bg_01.jpg");
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+
+    @include mq-down(md){
+      height: 800px;
+      background-position: -100px;
+      object-fit: contain;
+    }
+    @include mq-down(sm){
+      height: 550px;
+      background-position: -100px;
+      object-fit: contain;
+    }
+  
+  }
+
+  &-logo {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    img {
+      width: 360px;
+      height: auto;
+      @include mq-down(md){
+        width: 180px;
+      }
+      @include mq-down(sm){
+        width: 150px;
+      }
+    }
+
+    p {
+      letter-spacing: 0.3em
+    }
+  }
+}
+
+//====================section-what====================
+.what {
+  width: 100%;
+  height: 500px;
+  position: relative;  
+  @include mq-down(sm){
+    height: 350px;
+  }
+
+
+  //==========animation-js==========
+  .what-js-animation {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: all 1s;
+  }
+  .what-js-animation-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+  //================================
+
+  &-contents {
+    width: 100%;
+    height: 350px;
+    text-align: center;  
+    @include mq-down(md){
+      height: 300px;
+    }
+    @include mq-down(sm){
+      height: 250px;
+    }
+
+    &-title {
+      font-size: 40px;
+      color: #277994;  
+      @include mq-down(md){
+        font-size: 25px;
+      }
+      @include mq-down(sm){
+        font-size: 25px;
+      }
+    }
+
+    p {
+      font-weight: bolder;
+      line-height: 1.0em;
+      @include mq-down(sm){
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+//====================section-about====================
+.about {
+  width: 100%;
+  height: 850px;
+  background-color: #EDF2F4;
+  text-align: center;
+  margin: 0;
+  @include mq-down(md){
+    height: auto;
+  }
+  @include mq-down(sm){
+    height: auto;
+  }
+
+      
+  //==========animation-js==========
+
+  @mixin about-animation($time:1s) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50px) rotate(0deg) scale(0%);
+    transition: all $time;
+  }
+  .about-js-animation1 {
+    @include about-animation()
+  }
+  .about-js-animation2 {
+    @include about-animation($time:1.4s)
+  }
+  .about-js-animation3 {
+    @include about-animation($time:1.8s)
+  }
+  .about-js-animation4 {
+    @include about-animation($time:2.2s)
+  }
+  .about-js-animation-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px) rotate(360deg) scale(100%);
+
+    &:hover {
+      transform: rotate(10deg) scale(80%);
+    }
+  }
+  //================================
+
+  &-title {
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 0px;
+    @include mq-down(md){
+      font-size: 25px;
+    }
+    @include mq-down(sm){
+      font-size: 20px;
+    }
+  }
+  &-sub-title {
+    color: #CCD9E3;
+    font-weight: bolder;
+    font-size: 20px;
+    @include mq-down(md){
+      font-size: 16px;
+    }
+    @include mq-down(sm){
+      font-size: 12px;
+    }
+  }
+
+  &-flex {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    @include mq-down(md){
+      width: 60%;
+    }
+    @include mq-down(sm){
+      width: 90%;
+      justify-content: center;
+    }
+
+
+    &-contents {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      @include mq-down(md){
+        display: block;
+      }
+      @include mq-down(sm){
+      }
+
+      &-content {
+        text-align: center;
+        .solid {
+          border: solid 1px #fff;
+          border-radius: 50%;
+          width: 200px;
+          height: 200px;
+          @include mq-down(md){
+            width: 160px;
+            height: 160px;
+            margin-left: 33px;
+          }
+          @include mq-down(sm){
+            width: 160px;
+            height: 160px;
+            margin: 0px;
+          }
+
+          .square {
+          background-color: #fff;
+          border-radius: 50%;
+          width: 200px;
+          height: 200px;
+          position: relative;
+          @include mq-down(md){
+            width: 160px;
+            height: 160px;
+          }
+          @include mq-down(sm){
+            width: 160px;
+            height: 160px;
+          }
+
+          img {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            @include mq-down(md){
+              width: 100px;
+              height: 100px;
+            }
+            @include mq-down(sm){
+              width: 100px;
+              height: 100px;
+            }
+          }
+          }
+        }
+
+        p {
+          font-size: 20px;
+          font-weight: bolder;
+          @include mq-down(md){
+            font-size: 18px;
+          }
+          @include mq-down(sm){
+            font-size: 12px;
+
+          }
+        }
+      }
+  
+    }
+  }
+}
+.about-bottom {
+  width: 100%;
+  height: 180px;
+  margin: 0;
+  position: relative;
+  @include mq-down(md){
+    height: 60px;
+  }
+  @include mq-down(sm){
+    height: 40px;
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+  
+}
+
+//====================section-design====================
+.design {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  @include mq-down(md){
+    height: 700px;
+  }
+  @include mq-down(sm){
+    height: 650px;
+  }
+
+  &-wrap {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    @include mq-down(md){
+      display: block;
+    }
+    @include mq-down(sm){
+      display: block;
+    }
+
+    &-left {
+      width: 300px;
+      height: 400px;
+      padding: 20px 10px;
+      text-align: left;
+      @include mq-down(md){
+        width: 600px;
+        height: auto;
+        margin: 0 auto;
+      }
+      @include mq-down(sm){
+        width: 280px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      &-title {
+        font-weight: bolder;
+        font-size: 30px;
+        @include mq-down(md){
+          font-size: 25px;
+        }
+        @include mq-down(sm){
+          font-size: 20px;
+        }
+      }
+
+      &-sub-title {
+        font-weight: bold;
+        font-size: 20px;
+        color: #CCD9E3;
+        @include mq-down(md){
+          font-size: 12px;
+        }
+        @include mq-down(sm){
+          font-size: 15px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        @include mq-down(md){
+          font-size: 14px;
+        }
+        @include mq-down(sm){
+          font-size: 12px;
+        }
+      }
+      
+      &-comment {
+        font-size: 12px;
+        @include mq-down(md){
+          font-size: 11px;
+        }
+        @include mq-down(sm){
+          font-size: 10px;
+        }
+
+        a {
+          font-size: 12px;
+          color: #EAD119;
+          @include mq-down(md){
+            font-size: 11px;
+          }
+          @include mq-down(sm){
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+
+    @mixin slide-img {
+      width: 100%;
+      height: 280px;
+      background-position: center;
+      background-repeat: no-repeat;
+      object-fit: contain;
+      @include mq-down(md){
+        height: 250px;
+      }
+      @include mq-down(sm){
+        height: 200px;
+        width: 150px;
+      }
+    }
+    .swiper {
+      width: 780px;
+      height: 350px;
+      @include mq-down(md){
+        width: 600px;
+        height: 300px;
+      }
+      @include mq-down(sm){
+        width: 300px;
+        height: 300px;
+      }
+
+      &-button-prev {        
+        @include mq-down(sm){
+          transform: scale(50%);
+        }
+      }
+      &-button-next {        
+        @include mq-down(sm){
+          transform: scale(50%);
+        }
+      }
+
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 280px;
+          height: 420px;
+          text-align: center;
+
+          &-comment {
+            
+            @include mq-down(md){
+              font-size: 14px;
+            }
+            @include mq-down(sm){
+              font-size: 8px;
+            }
+          }
+
+          .slide01, .slide02, .slide03, .slide04 {
+            width: 100%;
+            height: 280px;
+            position: relative;
+            @include mq-down(md){
+              height: 250px;
+            }
+            @include mq-down(sm){
+              height: 200px;
+              width: auto;
+            }
+            .img-label {
+              background-color: #000;
+              color: #fff;
+              font-weight: bolder;
+              padding: 2px 12px;
+              position: absolute;
+              top: -15px;
+              left: 31px;
+              @include mq-down(md){
+                font-weight: bold;
+                left: 13px;
+              }
+              @include mq-down(sm){
+                padding: 2px 12px;
+                font-size: 8px;
+                font-weight: bold;
+                top: -7px;
+                left: 83px;
+              }
+            }
+          }
+
+          
+
+          .slide01 img{
+            @include slide-img();
+          }
+          .slide02 img{
+            @include slide-img();
+          }
+          .slide03 img{
+            @include slide-img();
+          }
+          .slide04 img{
+            @include slide-img();
+          }
+
+          &:not(.swiper-slide-active) {
+            opacity: .8;
+            transform: scale(.8);
+            padding-top: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//====================section-flow====================
+.flow {
+  width: 100%;
+  height: 500px;
+  background-color: #EAD119;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  @include mq-down(md){
+    height: 700px;
+  }
+  @include mq-down(sm){
+    height: 1070px;
+  }
+
+    //==========animation-js==========
+    @mixin float-animation-before($time:1s) {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(40px);
+      transition: all $time;      
+    }
+
+    @mixin float-animation-after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);      
+    }
+
+    .flow-js-animation {
+      @include float-animation-before();
+    }
+    .flow-js-animation-02 {
+      @include float-animation-before(2s);
+    }
+    .flow-js-animation-03 {
+      @include float-animation-before(3s);
+    }
+    .flow-js-animation-show {
+      @include float-animation-after();
+    }
+    //================================
+
+  &-title {
+    margin: 0;
+    font-size: 30px;
+    @include mq-down(md){
+      font-size: 30px;
+    }
+    @include mq-down(sm){
+      font-size: 20px;
+    }
+  }
+
+  &-sub-title {
+    margin: 1px auto;
+    @include mq-down(md){
+      font-size: 20px;
+    }
+    @include mq-down(sm){
+      font-size: 14px;
+    }
+  }
+
+  &-wrap-flex {
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+    height: auto;
+    margin: 0 auto;
+    @include mq-down(md){
+    }
+    @include mq-down(sm){
+      display: block;
+      width: 320px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &-contents {
+      width: 250px;
+      height: 400px;
+      display: block;
+      text-align: center;
+      @include mq-down(md){
+      }
+      @include mq-down(sm){
+        width: 250px;
+        height: 300px;
+        margin: 0 auto;
+      }
+
+      &-title {
+        font-size: 25px;
+        font-weight: bolder;
+        margin: 0 auto;
+      }
+
+      &-number {
+        font-size: 60px;
+        font-weight: bolder;
+      }
+
+      &-border {
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+      }
+
+      &-comment {
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+
+    &-arrow {
+      width: 50px;
+      height: 250px;
+      display: block;
+      position: relative;
+      @include mq-down(md){
+      }
+      @include mq-down(sm){
+        height: 30px;
+        transform: rotate(90deg);
+        width: 250px;
+        height: 50px;
+        margin: 0 auto;
+      }
+      .arrow-01 {
+        width: 12px;
+        height: 2px;
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: rotate(45deg) translateY(-49%) translateX(-55%);
+      }
+      
+      .arrow-02 {
+        width: 11px;
+        height: 2px;
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: rotate(-45deg) translateY(-50%) translateX(-50%);
+      }
+    }
+  }
+
+  .flow-bottom {
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background-color: #EAD119;
+    #waveCanvas-yellow2 {
+      transform: rotate(180deg);
+    }
+  }
+
+
+}
+
+
+//====================section-contact====================
+.contact {
+  width: 100%;
+  height: 1500px;
+  margin: 0 auto;
+  position: relative;
+  padding: 150px 0px 0px 0px;
+  text-align: center;
+  @include mq-down(md){
+  }
+  @include mq-down(sm){
+    padding: 120px 0px 0px 0px;
+    height: 1300px;
+  }
+
+      //==========animation-js==========
+      @mixin float-animation-before($time:1s) {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(40px);
+        transition: all $time;      
+      }
+  
+      @mixin float-animation-after {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);      
+      }
+  
+      .flow-js-animation {
+        @include float-animation-before();
+      }
+      .flow-js-animation-show {
+        @include float-animation-after();
+      }
+      //================================
+
+  
+  &-title {
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 20px auto 0px;
+  }
+  &-sub-title {
+    margin: 0 auto;
+    font-weight: bold;
+    color: #CCD9E3;
+  }
+
+  
+  //inputテンプレート
+  @mixin input-area($wid:100%) {
+    background-color: #F0F4F6;
+    border: none;
+    height: 40px;
+    padding: 5px 10px;
+    width: $wid;
+  }
+
+  &-wrap {
+
+    display: block;
+    width: 35%;
+    height: auto;
+    margin: 50px auto;
+    @include mq-down(md){
+    }
+    @include mq-down(sm){
+      width: 90%;
+    }
+
+    .company-name {
+      margin-top: 50px;
+      @include input-area();
+    }
+
+    &-contents {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: auto;
+      @include mq-down(sm){
+        display: block;
+        margin-top: 0px;
+      }
+
+      .name-input {
+        @include input-area(48%);
+        @include mq-down(sm){
+          margin-top: 50px;
+          @include input-area(100%);
+        }
+      }
+      .tell-input {
+        @include input-area(48%);
+        @include mq-down(sm){
+          margin-top: 50px;
+          @include input-area(100%);
+        }
+      }
+    }
+
+    .email-input {
+      margin-top: 50px;
+      @include input-area();
+    }
+
+    .radio-btn {
+      width: 100%;
+      height: 40px;
+      margin-top: 50px;
+      text-align: left;
+
+      label {
+        padding: 0px 20px 0px 5px;
+        font-weight: bold;
+        @include mq-down(sm){
+          font-size: 14px;
+        }
+      }
+      .pc-none {
+        display: none;
+        @include mq-down(sm){
+          display: inline;
+        }
+      }
+
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      margin-top: 50px;
+      padding: 20px 30px;
+      background-color: #F0F4F6;
+      border: none;
+      @include mq-down(sm){
+        height: 150px;
+        padding: 20px 15px;
+      }
+    }
+
+    .privacy {
+      font-weight: bolder;
+      margin-top: 50px;
+      @include mq-down(sm){
+        margin-top: 20px;
+      }
+    }
+
+    .caution {
+      color: red;
+      margin-top: 50px;
+      @include mq-down(sm){
+        margin-top: 20px;
+      }
+    }
+    
+
+    .contact-btn {
+      border: solid 1px #277994;
+      border-radius: 100px;
+      background-color: #fff;
+      margin-top: 30px;
+      transition: all 1.0s 0s ease;
+      @include mq-down(sm){
+        margin-top: 10px;
+      }
+
+
+      .contact-detail {
+        font-weight: bolder;
+        text-decoration: none;
+        color: #000;
+        display: block;
+        width: 300px;
+        height: 60px;
+        line-height: 60px;
+        @include mq-down(sm){
+          width: 200px;
+          height: 30px;
+          line-height: 30px;
+        }
+        &:hover {
+          color: #fff;
+        }
+      }
+      &:hover {
+        background-color: #277994;
+        transition: all 1.0s 0s ease;
+      }
+    }
+  }
+
+}
+
+
+//====================section-blog====================
+.blog {
+  width: 100%;
+  height: 500px;
+  padding: 50px 0px;
+  background-color: #EDF2F4;
+  position: relative;
+  @include mq-down(md){
+  }
+  @include mq-down(sm){
+    height: 700px;
+  }
+  //==========animation-js==========
+  @mixin float-animation-before($time:1s) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: all $time;      
+  }
+
+  @mixin float-animation-after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);      
+  }
+
+  .flow-js-animation {
+    @include float-animation-before();
+  }
+  .flow-js-animation-show {
+    @include float-animation-after();
+  }
+  //================================
+
+  &-wrap {
+    height: auto;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    @include mq-down(md){
+    }
+    @include mq-down(sm){
+      width: 90%;
+    }
+  
+    &-title {
+      font-size: 25px;
+      font-weight: bolder;
+      margin: 20px auto 0px;
+    }
+    &-sub-title {
+      margin: 0 auto;
+      font-weight: bold;
+      color: #CCD9E3;
+    }
+
+    &-list {
+      width: 45%;
+      height: auto;
+      margin: 0 auto;
+      @include mq-down(md){
+      }
+      @include mq-down(sm){
+        width: 90%;
+      }
+
+      a {
+        color: #000;
+        font-weight: bolder;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        @include mq-down(md){
+        }
+        @include mq-down(sm){
+          display: block;
+          text-align: left;
+        }
+        &-date {
+          font-weight: bolder;
+        }
+      }
+    }
+
+    .blog-btn {
+      border: solid 1px #277994;
+      border-radius: 100px;
+      background-color: #fff;
+      margin-top: 30px;
+      transition: all 1.0s 0s ease;
+
+
+      .blog-detail {
+        font-weight: bolder;
+        text-decoration: none;
+        color: #000;
+        display: block;
+        width: 300px;
+        height: 60px;
+        line-height: 60px;
+        @include mq-down(md){
+        }
+        @include mq-down(sm){
+          width: 200px;
+          height: 30px;
+          line-height: 30px;
+        }
+        &:hover {
+          color: #fff;
+        }
+      }
+      &:hover {
+        background-color: #277994;
+        transition: all 1.0s 0s ease;
+      }
+    }
+  }
+
+}
+
+//====================section-footer====================
+.footer {
+
+  #waveCanvas-gray4 {
+    transform: rotate(180deg);
+  }
+
+  width: 100%;
+  height: 500px;
+  position: relative;
+  @include mq-down(md){
+  }
+  @include mq-down(sm){
+    height: 300px;
+  }
+  &-bgimg {
+    width: 100%;
+    height: 100%;
+    background-position: bottom;
+    background-attachment : fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: contain;
+    background-image: url(https://umi.design/wp-content/themes/hakushi/common/img/footer/bg_01.jpg);
+    
+    @include mq-down(md){
+    }
+    @include mq-down(sm){
+      object-fit: cover;
+      width: 1000px;
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    transform:scale(50%) translateY(-50%) translateX(-50%);
+    text-align: center;    
+    @include mq-down(md){
+    }
+    @include mq-down(sm){
+      top: 20%;
+      left: -8%;
+      transform:scale(30%) translateY(-50%) translateX(-50%);
+    }
+
+    &-cp {
+      font-weight: bold;
+      color: #fff;
+      font-size: 30px;
+      margin-top: 50px;
+      @include mq-down(md){
+      }
+      @include mq-down(sm){
+        font-size: 50px;
+      }
+    }
+  }
+}

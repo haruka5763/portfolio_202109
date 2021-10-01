@@ -1,0 +1,43 @@
+
+//====================canvas-wave mixin定義====================
+
+@mixin canvas() {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+}
+@mixin canvas-top() {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+}
+  
+#waveCanvas-white {
+  @include canvas();
+}
+
+#waveCanvas-gray {
+  @include canvas();
+}
+
+#waveCanvas-gray2 {
+  @include canvas();
+}
+
+#waveCanvas-gray3 {
+  @include canvas();
+}
+
+#waveCanvas-gray4 {
+  @include canvas-top();
+}
+
+#waveCanvas-yellow {
+  @include canvas();
+}
+
+#waveCanvas-yellow2 {
+  @include canvas-top();
+}

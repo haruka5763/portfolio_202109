@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./canvas.css">
+    <link rel="stylesheet" href="./humberger-menu.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <title>umi.design</title>
+
+    
+<script>
+    if (window.matchMedia('(max-width: 399px)').matches) {
+        function loadFinished(){
+                
+            if (window.matchMedia('(max-width: 399px)').matches) {
+                    let obj = document.getElementById("what-obj");
+                    let list = obj.classList;
+                    list.add("what-js-animation-show");
+
+                }
+                
+            if (window.matchMedia('(max-width: 399px)').matches) {
+                    let about_obj_01 = document.getElementById("about-obj-01");
+                    let about_list_01 = about_obj_01.classList;
+                    about_list_01.add("about-js-animation-show");
+
+                    let about_obj_02 = document.getElementById("about-obj-02");
+                    let about_list_02 = about_obj_02.classList;
+                    about_list_02.add("about-js-animation-show");
+
+                    let about_obj_03 = document.getElementById("about-obj-03");
+                    let about_list_03 = about_obj_03.classList;
+                    about_list_03.add("about-js-animation-show");
+
+                    let about_obj_04 = document.getElementById("about-obj-04");
+                    let about_list_04 = about_obj_04.classList;
+                    about_list_04.add("about-js-animation-show");
+
+                } else {
+                    console.log("error");
+                } 
+            
+            if (window.matchMedia('(max-width: 399px)').matches) {
+                let about_obj_05 = document.getElementById("about-obj-05");
+                let about_list_05 = about_obj_05.classList;
+                about_list_05.add("about-js-animation-show");
+
+                let about_obj_06 = document.getElementById("about-obj-06");
+                let about_list_06 = about_obj_06.classList;
+                about_list_06.add("about-js-animation-show");
+
+                let about_obj_07 = document.getElementById("about-obj-07");
+                let about_list_07 = about_obj_07.classList;
+                about_list_07.add("about-js-animation-show");
+
+                let about_obj_08 = document.getElementById("about-obj-08");
+                let about_list_08 = about_obj_08.classList;
+                about_list_08.add("about-js-animation-show");
+
+            } else {
+                console.log("error");
+            } 
+
+        }
+    }
+</script>
+
+</head>
+<body onload = loadFinished()>
+
+    <div class="page-wrapper">
+
+        <!-- ==========humberger-menu========== -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+          
+        <nav class="globalMenuSp">
+            <ul>
+                <li><a href="#">Menu1</a></li>
+                <li><a href="#">Menu2</a></li>
+                <li><a href="#">Menu3</a></li>
+                <li><a href="#">Menu4</a></li>
+                <li><a href="#">Menu5</a></li>
+            </ul>
+        </nav>
+    
+        <div class="header-contact">
+            <a class="page-link" href="#contact-link"><i class="far fa-envelope awesomeicon"></i></a>
+        </div>
+
+        <div class="header-link">
+            <a href="#">
+                umi.design
+            </a>
+        </div>
+        <!-- ==========section-top========== -->
+        <section class="top">
+            <div class="top-image">
+                <div class="top-logo">
+                    <img src="https://umi.design/wp-content/themes/hakushi/common/img/footer/logo.png" alt="">
+                    <p>Web・グラフィックデザイン</p>
+                </div>
+                <canvas id="waveCanvas-white"></canvas>
+            </div>
+        </section>
+
+        <!-- ==========section-what========== -->
+        <section class="what">
+            <div id="what-obj" class="what-contents what-js-animation">
+                <h2 class="what-contents-title">広く深いデザインをうみだす</h2>
+                <p>波も風も砂浜も同じものは無いように</p>
+                <p>人も会社もひとつひとつ違います</p>
+                <p>灯台のように道を照らし、</p>
+                <p>同じ舟に乗るように共に歩む</p>
+                <p>そんなデザインをうみだしていきたいと</p>
+                <p>わたしたちは考えています</p>
+            </div>
+            <canvas id="waveCanvas-gray"></canvas>
+        </section>
+
+        <!-- ==========section-about========== -->
+        <section class="about">
+            <h2 class="about-title">私たちができること</h2>
+            <p class="about-sub-title">About Works</p>
+
+            <div class="about-flex">
+                <div class="about-flex-contents">
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation1" id="about-obj-01">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_01.png" alt="">
+                            </div>
+                        </div>
+                        <p>Webサイト制作<br>運用・保守</p>
+                    </div>
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation3" id="about-obj-02">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_02.png" alt="">
+                            </div>
+                        </div>
+                        <p>WordPress・<br>ブログ構築</p>
+                    </div>
+                </div>
+                <div class="about-flex-contents">
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation4" id="about-obj-03">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_03.png" alt="">
+                            </div>
+                        </div>
+                        <p>ランディング<br>ページ制作</p>
+                    </div>
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation2" id="about-obj-04">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_04.png" alt="">
+                            </div>
+                        </div>
+                        <p>Webコンサルティング・<br>ディレクション</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-flex">
+                <div class="about-flex-contents">
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation1" id="about-obj-05">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_05.png" alt="">
+                            </div>
+                        </div>
+                        <p>チラシ・<br>ポスター制作</p>
+                    </div>
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation3" id="about-obj-06">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_06.png" alt="">
+                            </div>
+                        </div>
+                        <p>パンフレット・<br>リーフレット制作</p>
+                    </div>
+                </div>
+                <div class="about-flex-contents">
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation4" id="about-obj-07">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_07.png" alt="">
+                            </div>
+                        </div>
+                        <p>DM・名刺<br><br></p>
+                    </div>
+                    <div class="about-flex-contents-content">
+                        <div class="solid">
+                            <div class="square  about-js-animation2" id="about-obj-08">
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/works/ico_08.png" alt="">
+                            </div>
+                        </div>
+                        <p>イラスト制作<br><br></p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="about-bottom">
+            <canvas id="waveCanvas-gray2" class="rotate-180"></canvas>
+        </section>
+
+        <!-- ==========section-design========== -->
+        <section class="design">
+            <div class="design-wrap">
+
+                <div id="" class="design-wrap-left">
+                    <h2 class="design-wrap-left-title">
+                        例えばこんな<br>デザイン
+                    </h2>
+                    <h3 class="design-wrap-left-sub-title">e.g. design</h3>
+                    <p>
+                        umi.designはグラフィックデザインもWebデザインも制作できます。
+                        手に取る人のことを、画面の向こう側の人のことを第一に考える、
+                        そんなデザインが得意です。
+                    </p>
+                    <p class="design-wrap-left-comment">
+                        ※非公開実績もございます。<br>お気軽に
+                        <a href="#">ご連絡ください。</a>
+                    </p>
+                </div>
+
+                <!-- Swiper -->
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="slide01">
+                                <p class="img-label">Web</p>
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/design/img_01.jpg" alt="">
+                            </div>
+                            <p class="swiper-slide-comment">シンプルデザイン</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide02">
+                                <p class="img-label">Web</p>
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/design/img_02.jpg" alt="">
+                            </div>
+                            <p class="swiper-slide-comment">ごてごてデザイン</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide03">
+                                <p class="img-label">Web</p>
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/design/img_03.jpg" alt="">
+                            </div>
+                            <p class="swiper-slide-comment">企業向けデザイン</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide04">
+                                <p class="img-label">Web</p>
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/design/img_04.jpg" alt="">
+                            </div>
+                            <p class="swiper-slide-comment">チラシ・ポスター</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide04">
+                                <p class="img-label">Gra</p>
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/design/img_05.jpg" alt="">
+                            </div>
+                            <p class="swiper-slide-comment">名刺・ロゴ</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide04">
+                                <p class="img-label">Gra</p>
+                                <img src="https://umi.design/wp-content/themes/hakushi/assets/img/home/design/img_06.jpg" alt="">
+                            </div>
+                            <p class="swiper-slide-comment">イラスト</p>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+
+            </div>
+            <canvas id="waveCanvas-yellow"></canvas>
+        </section>
+
+
+        <!-- ==========section-flow========== -->
+        <section class="flow">
+            <div id="flow-obj" class="flow-js-animation">
+                <h2 class="flow-title">制作のながれ</h2>
+                <p class="flow-sub-title">Work Flow</p>
+            </div>
+            <div class="flow-wrap-flex">
+                <div class="flow-wrap-flex-contents">
+                    <h2 id="step-01-1" class="flow-wrap-flex-contents-title flow-js-animation">STEP</h2>
+                    <div id="step-01-2" class="flow-wrap-flex-contents-number number01 flow-js-animation">01</div>
+                    <div class="flow-wrap-flex-contents-border"></div>
+                    <div class="flow-wrap-flex-contents-comment">
+                        <p id="step-01-3" class="flow-js-animation">
+                            お客さまのご要望・お悩みをヒアリングし、umi.designができること、そして課題解決に向けた最善策をご提案いたします。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flow-wrap-flex-arrow">
+                    <span class="arrow-01"></span>
+                    <span class="arrow-02"></span>
+                </div>
+
+                <div class="flow-wrap-flex-contents">
+                    <h2 id="step-02-1" class="flow-wrap-flex-contents-title flow-js-animation-02">STEP</h2>
+                    <div id="step-02-2" class="flow-wrap-flex-contents-number number02 flow-js-animation-02">02</div>
+                    <div class="flow-wrap-flex-contents-border"></div>
+                    <div class="flow-wrap-flex-contents-comment">
+                        <p id="step-02-3" class="flow-js-animation-02">
+                            お客さまのご要望・お悩みをヒアリングし、umi.designができること、そして課題解決に向けた最善策をご提案いたします。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flow-wrap-flex-arrow">
+                    <span class="arrow-01"></span>
+                    <span class="arrow-02"></span>
+                </div>
+
+                <div class="flow-wrap-flex-contents">
+                    <h2 id="step-03-1" class="flow-wrap-flex-contents-title flow-js-animation-03">STEP</h2>
+                    <div  id="step-03-2" class="flow-wrap-flex-contents-number number03 flow-js-animation-03">03</div>
+                    <div class="flow-wrap-flex-contents-border"></div>
+                    <div class="flow-wrap-flex-contents-comment">
+                        <p id="step-03-3" class="flow-js-animation-03">
+                            お客さまのご要望・お悩みをヒアリングし、umi.designができること、そして課題解決に向けた最善策をご提案いたします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-bottom">
+                <canvas id="waveCanvas-yellow2"></canvas>
+            </div>
+        </section>
+
+        <!-- ==========section-contact========== -->
+        <section class="contact" id="contact-link">
+            <h2 id="contact-obj" class="contact-title flow-js-animation">お問い合わせ</h2>
+            <div class="contact-sub-title">Contact</div>
+            <div class="contact-wrap">
+                <input type="text" class="company-name" placeholder="企業名*">
+                <div class="contact-wrap-contents">
+                    <input type="text" class="name-input" name="" id="" placeholder="お名前*">
+                    <input type="text" class="tell-input" name="" id="" placeholder="電話番号*">
+                </div>
+                <input type="text" class="email-input" placeholder="メールアドレス*">
+                <div class="radio-btn">
+                    <span>
+                        <input id="apple" type="radio" name="fruits" />
+                        <label for="apple">お仕事のご相談</label>
+                        <input id="orange" type="radio" name="fruits" />
+                        <label for="orange">お見積り<br class="pc-none"></label>
+                        <input id="peach" type="radio" name="fruits" />
+                        <label for="peach">まずはお話がした</label>
+                    </span>
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="お問い合わせ内容を入力して下さい*"></textarea>
+                <p class="privacy">プライバシーポリシーを確認する</p>
+                <p class="caution">*必須項目です</p>
+                <button class="contact-btn">
+                    <a class="contact-detail" href="#">問い合わせる</a>
+                </button>
+            </div>
+
+
+
+            <canvas id="waveCanvas-gray3"></canvas>
+        </section>
+
+        <!-- ==========section-blog========== -->
+        <section class="blog">
+            <div class="blog-wrap">
+                <h2 id="blog-obj" class="blog-wrap-title flow-js-animation">ブログ</h2>
+                <div class="blog-wrap-sub-title">Blog</div>
+                <div class="blog-wrap-list">
+                    <a href="#">
+                        <p class="blog-wrap-list-date">2020.02.16</p>
+                        <p class="">[WordPress]検索結果に固定ページを表示しない方法(投稿記事のみ)</p>
+                    </a>
+                    <a href="#">
+                        <p class="blog-wrap-list-date">2020.02.16</p>
+                        <p>[WordPress]検索結果に固定ページを表示しない方法(投稿記事のみ)</p>
+                    </a>
+                    <a href="#">
+                        <p class="blog-wrap-list-date">2020.02.16</p>
+                        <p>[WordPress]検索結果に固定ページを表示しない方法(投稿記事のみ)</p>
+                    </a>
+                </div>
+                <button class="blog-btn">
+                    <a class="blog-detail" href="#">ブログ一覧</a>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==========section-footer========== -->
+        <section class="footer">
+            <canvas id="waveCanvas-gray4" class="rotate-180"></canvas>
+            <div class="footer-bgimg"></div>
+            <div class="footer-logo">
+                <img src="https://umi.design/wp-content/themes/hakushi/common/img/footer/logo.png" alt="">
+                <p class="footer-logo-cp">© 2019 umi.design</p>
+            </div>
+        </section>
+
+
+
+    </div>
+    <script src="./js/script-animation.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/canvas-gray.js"></script>
+    <script src="./js/canvas-gray2.js"></script>
+    <script src="./js/canvas-gray3.js"></script>
+    <script src="./js/canvas-gray4.js"></script>
+    <script src="./js/canvas-white.js"></script>
+    <script src="./js/canvas-yellow.js"></script>
+    <script src="./js/canvas-yellow2.js"></script>
+    <script src="./js/script-swiper.js"></script>
+    <script src="./js/hamburger-menu.js"></script>
+</body>
+</html>
